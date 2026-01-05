@@ -8,7 +8,7 @@ public class HorarioAtendimento {
     private DayOfWeek diaSemana;
     private LocalTime horaInicio;
     private LocalTime horaFim;
-    private int duracaoConsulta; // em minutos
+    private int duracaoConsulta; 
     
     public HorarioAtendimento(DayOfWeek diaSemana, LocalTime horaInicio, 
                               LocalTime horaFim, int duracaoConsulta) {
