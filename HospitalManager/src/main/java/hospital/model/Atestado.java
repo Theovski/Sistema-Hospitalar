@@ -11,7 +11,6 @@ public class Atestado {
     private int diasAfastamento;
     private String cid; // Código Internacional de Doenças (Descobri que isso existe, acho que é melhor que sla colocar string doença)
     
-    // Construtor
     public Atestado(int id, Paciente paciente, Medico medico, int diasAfastamento, String cid) {
         this.id = id;
         this.paciente = paciente;
@@ -21,10 +20,10 @@ public class Atestado {
         this.cid = cid;
     }
     
-    // Construtor vazio
+
     public Atestado() {}
     
-    // Getters e Setters
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     
