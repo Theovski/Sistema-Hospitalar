@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package hospital.util;
 
 import java.io.*;
@@ -51,3 +52,6 @@ public class FileManager {
         criarDiretorio(caminho);
     }
 }
+=======
+
+>>>>>>> 586504875a4bde42a23314da35225f64cbeac28e

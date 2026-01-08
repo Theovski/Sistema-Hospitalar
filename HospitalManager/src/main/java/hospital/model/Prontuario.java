@@ -10,8 +10,7 @@ public class Prontuario {
     private List<Atestado> atestados;
     private List<Receita> receitas;
     private String alergias;
-    private String medicamentosUsoContinuo;
-    private String historicoFamiliar;
+
     
     public Prontuario(String pacienteCpf) {
         this.pacienteCpf = pacienteCpf;
@@ -20,8 +19,6 @@ public class Prontuario {
         this.atestados = new ArrayList<>();
         this.receitas = new ArrayList<>();
         this.alergias = "";
-        this.medicamentosUsoContinuo = "";
-        this.historicoFamiliar = "";
     }
     
     public Prontuario() {
@@ -49,12 +46,16 @@ public class Prontuario {
     public String getAlergias() { return alergias; }
     public void setAlergias(String alergias) { this.alergias = alergias; }
     
+<<<<<<< HEAD
     public String getMedicamentosUsoContinuo() { return medicamentosUsoContinuo; }
     public void setMedicamentosUsoContinuo(String medicamentos) { this.medicamentosUsoContinuo = medicamentos; }
     
     public String getHistoricoFamiliar() { return historicoFamiliar; }
     public void setHistoricoFamiliar(String historico) { this.historicoFamiliar = historico; }
     
+=======
+
+>>>>>>> 586504875a4bde42a23314da35225f64cbeac28e
     public void adicionarConsulta(Consulta consulta) {
         this.historicoConsultas.add(consulta);
     }
@@ -75,8 +76,6 @@ public class Prontuario {
         System.out.println("=== PRONTUÁRIO MÉDICO ===");
         System.out.println("Paciente CPF: " + pacienteCpf);
         System.out.println("\nAlergias: " + alergias);
-        System.out.println("Medicamentos em uso: " + medicamentosUsoContinuo);
-        System.out.println("Histórico familiar: " + historicoFamiliar);
         System.out.println("\nTotal de consultas: " + historicoConsultas.size());
         System.out.println("Total de exames: " + historicoExames.size());
         System.out.println("Total de atestados: " + atestados.size());
