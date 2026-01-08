@@ -4,10 +4,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Exame {
-
-    private int id;
-    private Paciente paciente;
-    private Medico medicoSolicitante;
+    private String id;
+    private String pacienteCpf;
+    private String medicoCrmSolicitante;
     private String tipoExame;
     private LocalDate dataSolicitacao;
     private LocalDateTime dataRealizacao;
@@ -15,12 +14,10 @@ public class Exame {
     private String laboratorio;
     private boolean entregueAoPaciente;
     
-    // Construtor
-    public Exame(int id, Paciente paciente, Medico medicoSolicitante, String tipoExame) {
-
+    public Exame(String id, String pacienteCpf, String medicoCrmSolicitante, String tipoExame) {
         this.id = id;
-        this.paciente = paciente;
-        this.medicoSolicitante = medicoSolicitante;
+        this.pacienteCpf = pacienteCpf;
+        this.medicoCrmSolicitante = medicoCrmSolicitante;
         this.tipoExame = tipoExame;
         this.dataSolicitacao = LocalDate.now();
         this.entregueAoPaciente = false;
@@ -28,30 +25,23 @@ public class Exame {
     
     public Exame() {}
     
-
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
     
-    public Paciente getPaciente() { return paciente; }
-    public void setPaciente(Paciente paciente) { this.paciente = paciente; }
+    public String getPacienteCpf() { return pacienteCpf; }
+    public void setPacienteCpf(String pacienteCpf) { this.pacienteCpf = pacienteCpf; }
     
-    public Medico getMedicoSolicitante() { return medicoSolicitante; }
-    public void setMedicoSolicitante(Medico medicoSolicitante) { 
-        this.medicoSolicitante = medicoSolicitante; 
-    }
+    public String getMedicoCrmSolicitante() { return medicoCrmSolicitante; }
+    public void setMedicoCrmSolicitante(String medicoCrm) { this.medicoCrmSolicitante = medicoCrm; }
     
     public String getTipoExame() { return tipoExame; }
     public void setTipoExame(String tipoExame) { this.tipoExame = tipoExame; }
     
     public LocalDate getDataSolicitacao() { return dataSolicitacao; }
-    public void setDataSolicitacao(LocalDate dataSolicitacao) { 
-        this.dataSolicitacao = dataSolicitacao; 
-    }
+    public void setDataSolicitacao(LocalDate dataSolicitacao) { this.dataSolicitacao = dataSolicitacao; }
     
     public LocalDateTime getDataRealizacao() { return dataRealizacao; }
-    public void setDataRealizacao(LocalDateTime dataRealizacao) { 
-        this.dataRealizacao = dataRealizacao; 
-    }
+    public void setDataRealizacao(LocalDateTime dataRealizacao) { this.dataRealizacao = dataRealizacao; }
     
     public String getResultado() { return resultado; }
     public void setResultado(String resultado) { this.resultado = resultado; }
@@ -60,12 +50,8 @@ public class Exame {
     public void setLaboratorio(String laboratorio) { this.laboratorio = laboratorio; }
     
     public boolean isEntregueAoPaciente() { return entregueAoPaciente; }
-    public void setEntregueAoPaciente(boolean entregue) { 
-        this.entregueAoPaciente = entregue; 
-    }
+    public void setEntregueAoPaciente(boolean entregue) { this.entregueAoPaciente = entregue; }
     
-
-
     public void registrarResultado(String resultado, String laboratorio, LocalDateTime dataRealizacao) {
         this.resultado = resultado;
         this.laboratorio = laboratorio;
@@ -83,8 +69,8 @@ public class Exame {
     @Override
     public String toString() {
         return "Exame #" + id + " - " + tipoExame +
-               "\nPaciente: " + paciente.getNome() +
-               "\nMédico: " + medicoSolicitante.getNome() +
+               "\nPaciente CPF: " + pacienteCpf +
+               "\nMédico CRM: " + medicoCrmSolicitante +
                "\nData Solicitação: " + dataSolicitacao +
                "\nResultado: " + (possuiResultado() ? resultado : "Pendente") +
                "\nEntregue: " + (entregueAoPaciente ? "Sim" : "Não");

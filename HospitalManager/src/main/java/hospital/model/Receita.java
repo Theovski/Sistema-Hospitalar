@@ -5,19 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Receita {
-
-    private int id;
-    private Paciente paciente;
-    private Medico medico;
+    private String id;
+    private String pacienteCpf;
+    private String medicoCrm;
     private LocalDate dataPrescricao;
     private List<Medicamento> medicamentos;
+    private String orientacoes;
     
     public static class Medicamento {
-
         private String nome;
         private String dosagem;
         private String frequencia;
-        private int duracao; 
+        private int duracao;
         
         public Medicamento(String nome, String dosagem, String frequencia, int duracao) {
             this.nome = nome;
@@ -26,7 +25,6 @@ public class Receita {
             this.duracao = duracao;
         }
         
-        // Getters
         public String getNome() { return nome; }
         public String getDosagem() { return dosagem; }
         public String getFrequencia() { return frequencia; }
@@ -38,10 +36,10 @@ public class Receita {
         }
     }
     
-    public Receita(int id, Paciente paciente, Medico medico) {
+    public Receita(String id, String pacienteCpf, String medicoCrm) {
         this.id = id;
-        this.paciente = paciente;
-        this.medico = medico;
+        this.pacienteCpf = pacienteCpf;
+        this.medicoCrm = medicoCrm;
         this.dataPrescricao = LocalDate.now();
         this.medicamentos = new ArrayList<>();
     }
@@ -50,30 +48,24 @@ public class Receita {
         this.medicamentos = new ArrayList<>();
     }
     
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
     
-    public Paciente getPaciente() { return paciente; }
-    public void setPaciente(Paciente paciente) { this.paciente = paciente; }
+    public String getPacienteCpf() { return pacienteCpf; }
+    public void setPacienteCpf(String pacienteCpf) { this.pacienteCpf = pacienteCpf; }
     
-    public Medico getMedico() { return medico; }
-    public void setMedico(Medico medico) { this.medico = medico; }
+    public String getMedicoCrm() { return medicoCrm; }
+    public void setMedicoCrm(String medicoCrm) { this.medicoCrm = medicoCrm; }
     
     public LocalDate getDataPrescricao() { return dataPrescricao; }
-    public void setDataPrescricao(LocalDate dataPrescricao) { 
-        this.dataPrescricao = dataPrescricao; 
-    }
+    public void setDataPrescricao(LocalDate dataPrescricao) { this.dataPrescricao = dataPrescricao; }
     
     public List<Medicamento> getMedicamentos() { return medicamentos; }
-    public void setMedicamentos(List<Medicamento> medicamentos) { 
-        this.medicamentos = medicamentos; 
-    }
+    public void setMedicamentos(List<Medicamento> medicamentos) { this.medicamentos = medicamentos; }
     
     public String getOrientacoes() { return orientacoes; }
     public void setOrientacoes(String orientacoes) { this.orientacoes = orientacoes; }
     
-
-
     public void adicionarMedicamento(Medicamento medicamento) {
         this.medicamentos.add(medicamento);
     }
@@ -82,12 +74,23 @@ public class Receita {
         this.medicamentos.remove(medicamento);
     }
     
+    public String getMedicamentosString() {
+        StringBuilder sb = new StringBuilder();
+        for (Medicamento m : medicamentos) {
+            sb.append(m.toString()).append("; ");
+        }
+        return sb.toString();
+    }
+    
+    public String getInstrucoes() { return orientacoes; }
+    public void setInstrucoes(String instrucoes) { this.orientacoes = instrucoes; }
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Receita #").append(id)
-          .append("\nPaciente: ").append(paciente.getNome())
-          .append("\nMédico: ").append(medico.getNome())
+          .append("\nPaciente CPF: ").append(pacienteCpf)
+          .append("\nMédico CRM: ").append(medicoCrm)
           .append("\nData: ").append(dataPrescricao)
           .append("\n\nMedicamentos:\n");
         
@@ -95,7 +98,7 @@ public class Receita {
             sb.append("- ").append(m).append("\n");
         }
         
-        sb.append("\nOrientacoes: ").append(orientacoes);
+        sb.append("\nOrientações: ").append(orientacoes);
         return sb.toString();
     }
 }

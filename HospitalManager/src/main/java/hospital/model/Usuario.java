@@ -3,14 +3,12 @@ package hospital.model;
 import hospital.model.enums.TipoUsuario;
 
 public abstract class Usuario extends Pessoa {
-
     private String login;
     private String senha;
     private TipoUsuario tipoUsuario;
     
-    public Usuario(String nome, String cpf, String email, String telefone, Endereco endereco,
+    public Usuario(String nome, String cpf, String email, String telefone, String endereco,
                    String login, String senha, TipoUsuario tipoUsuario) {
-                    
         super(nome, cpf, email, telefone, endereco);
         this.login = login;
         this.senha = senha;

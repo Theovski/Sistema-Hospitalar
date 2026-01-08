@@ -3,58 +3,61 @@ package hospital.model;
 import java.time.LocalDate;
 
 public class Atestado {
-
-    private int id;
-    private Paciente paciente;
-    private Medico medico;
+    private String id;
+    private String pacienteCpf;
+    private String medicoCrm;
     private LocalDate dataEmissao;
     private int diasAfastamento;
-    private String cid; // Código Internacional de Doenças (Descobri que isso existe, acho que é melhor que sla colocar string doença)
+    private String cid;
+    private String descricao;
     
-    // Construtor
-    public Atestado(int id, Paciente paciente, Medico medico, int diasAfastamento, String cid) {
+    public Atestado(String id, String pacienteCpf, String medicoCrm, int diasAfastamento, String cid) {
         this.id = id;
-        this.paciente = paciente;
-        this.medico = medico;
+        this.pacienteCpf = pacienteCpf;
+        this.medicoCrm = medicoCrm;
         this.dataEmissao = LocalDate.now();
         this.diasAfastamento = diasAfastamento;
         this.cid = cid;
     }
     
-    // Construtor vazio
     public Atestado() {}
     
-    // Getters e Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
     
-    public Paciente getPaciente() { return paciente; }
-    public void setPaciente(Paciente paciente) { this.paciente = paciente; }
+    public String getPacienteCpf() { return pacienteCpf; }
+    public void setPacienteCpf(String pacienteCpf) { this.pacienteCpf = pacienteCpf; }
     
-    public Medico getMedico() { return medico; }
-    public void setMedico(Medico medico) { this.medico = medico; }
+    public String getMedicoCrm() { return medicoCrm; }
+    public void setMedicoCrm(String medicoCrm) { this.medicoCrm = medicoCrm; }
     
     public LocalDate getDataEmissao() { return dataEmissao; }
     public void setDataEmissao(LocalDate dataEmissao) { this.dataEmissao = dataEmissao; }
     
     public int getDiasAfastamento() { return diasAfastamento; }
-    public void setDiasAfastamento(int diasAfastamento) { 
-        this.diasAfastamento = diasAfastamento; 
-    }
+    public void setDiasAfastamento(int diasAfastamento) { this.diasAfastamento = diasAfastamento; }
     
     public String getCid() { return cid; }
     public void setCid(String cid) { this.cid = cid; }
- 
+    
+    public String getDescricao() { return descricao; }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
     
     public LocalDate getDataRetorno() {
         return dataEmissao.plusDays(diasAfastamento);
     }
     
+    public String getDiagnostico() { return descricao; }
+    public void setDiagnostico(String diagnostico) { this.descricao = diagnostico; }
+    
+    public int getDiasRepouso() { return diasAfastamento; }
+    public void setDiasRepouso(int dias) { this.diasAfastamento = dias; }
+    
     @Override
     public String toString() {
         return "Atestado #" + id + 
-               "\nPaciente: " + paciente.getNome() +
-               "\nMédico: " + medico.getNome() +
+               "\nPaciente CPF: " + pacienteCpf +
+               "\nMédico CRM: " + medicoCrm +
                "\nData: " + dataEmissao +
                "\nDias de afastamento: " + diasAfastamento +
                "\nRetorno: " + getDataRetorno() +

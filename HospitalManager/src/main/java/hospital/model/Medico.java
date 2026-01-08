@@ -5,18 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Medico extends Usuario {
-
     private String crm;
     private Especialidade especialidade;
     private List<HorarioAtendimento> horariosAtendimento;
     private boolean ativo;
     private List<Consulta> consultasAgendadas;
     
-    public Medico(String nome, String cpf, String email, String telefone, Endereco endereco,
+    public Medico(String nome, String cpf, String email, String telefone, String endereco,
                   String login, String senha, String crm, Especialidade especialidade) {
-
         super(nome, cpf, email, telefone, endereco, login, senha, TipoUsuario.MEDICO);
-
         this.crm = crm;
         this.especialidade = especialidade;
         this.ativo = true;
@@ -60,15 +57,6 @@ public class Medico extends Usuario {
     
     public void removerHorario(HorarioAtendimento horario) {
         this.horariosAtendimento.remove(horario);
-    }
-    
-    public boolean estaDisponivel() {
-        for (HorarioAtendimento horario : horariosAtendimento) {
-            if (horario.estaDisponivel()) {
-                return true;
-            }
-        }
-        return false;
     }
     
     @Override

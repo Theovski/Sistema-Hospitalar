@@ -4,15 +4,13 @@ import java.time.DayOfWeek;
 import java.time.LocalTime;
 
 public class HorarioAtendimento {
-
     private DayOfWeek diaSemana;
     private LocalTime horaInicio;
     private LocalTime horaFim;
-    private int duracaoConsulta; // em minutos
+    private int duracaoConsulta;
     
     public HorarioAtendimento(DayOfWeek diaSemana, LocalTime horaInicio, 
                               LocalTime horaFim, int duracaoConsulta) {
-
         this.diaSemana = diaSemana;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
@@ -31,15 +29,11 @@ public class HorarioAtendimento {
     public void setHoraFim(LocalTime horaFim) { this.horaFim = horaFim; }
     
     public int getDuracaoConsulta() { return duracaoConsulta; }
-    public void setDuracaoConsulta(int duracaoConsulta) { 
-        this.duracaoConsulta = duracaoConsulta; 
-    }
+    public void setDuracaoConsulta(int duracaoConsulta) { this.duracaoConsulta = duracaoConsulta; }
     
     public boolean estaDisponivel() {
-        
         LocalTime agora = LocalTime.now();
         DayOfWeek hoje = DayOfWeek.from(java.time.LocalDate.now());
-        
         return diaSemana.equals(hoje) &&
                !agora.isBefore(horaInicio) &&
                !agora.isAfter(horaFim);
