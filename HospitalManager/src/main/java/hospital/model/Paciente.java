@@ -1,6 +1,7 @@
 package hospital.model;
 
 import hospital.model.enums.StatusVisita;
+import hospital.model.enums.TipoUsuario;
 import java.util.ArrayList;
 import java.util.List;
 

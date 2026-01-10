@@ -11,11 +11,7 @@ public class Atestado {
     private String cid;
     private String descricao;
     
-<<<<<<< HEAD
     public Atestado(String id, String pacienteCpf, String medicoCrm, int diasAfastamento, String cid) {
-=======
-    public Atestado(int id, Paciente paciente, Medico medico, int diasAfastamento, String cid) {
->>>>>>> 586504875a4bde42a23314da35225f64cbeac28e
         this.id = id;
         this.pacienteCpf = pacienteCpf;
         this.medicoCrm = medicoCrm;
@@ -24,19 +20,10 @@ public class Atestado {
         this.cid = cid;
     }
     
-<<<<<<< HEAD
     public Atestado() {}
     
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
-=======
-
-    public Atestado() {}
-    
-
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
->>>>>>> 586504875a4bde42a23314da35225f64cbeac28e
     
     public String getPacienteCpf() { return pacienteCpf; }
     public void setPacienteCpf(String pacienteCpf) { this.pacienteCpf = pacienteCpf; }

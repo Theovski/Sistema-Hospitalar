@@ -46,16 +46,6 @@ public class Prontuario {
     public String getAlergias() { return alergias; }
     public void setAlergias(String alergias) { this.alergias = alergias; }
     
-<<<<<<< HEAD
-    public String getMedicamentosUsoContinuo() { return medicamentosUsoContinuo; }
-    public void setMedicamentosUsoContinuo(String medicamentos) { this.medicamentosUsoContinuo = medicamentos; }
-    
-    public String getHistoricoFamiliar() { return historicoFamiliar; }
-    public void setHistoricoFamiliar(String historico) { this.historicoFamiliar = historico; }
-    
-=======
-
->>>>>>> 586504875a4bde42a23314da35225f64cbeac28e
     public void adicionarConsulta(Consulta consulta) {
         this.historicoConsultas.add(consulta);
     }

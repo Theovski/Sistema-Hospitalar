@@ -35,7 +35,6 @@ public class MedicoDAO implements ArquivoDAO<Medico> {
             medico.setTelefone(partes[3]);
             medico.setEspecialidade(Especialidade.valueOf(partes[4]));
             medico.setAtivo(Boolean.parseBoolean(partes[5]));
-            medico.setTipo(TipoUsuario.MEDICO);
             medico.setLogin(partes[0]); // CRM como login
             medico.setSenha(partes[6]);
             

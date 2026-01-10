@@ -43,6 +43,9 @@ public class Exame {
     public LocalDateTime getDataRealizacao() { return dataRealizacao; }
     public void setDataRealizacao(LocalDateTime dataRealizacao) { this.dataRealizacao = dataRealizacao; }
     
+    // Alias para compatibilidade
+    public LocalDateTime getDataResultado() { return dataRealizacao; }
+    
     public String getResultado() { return resultado; }
     public void setResultado(String resultado) { this.resultado = resultado; }
     

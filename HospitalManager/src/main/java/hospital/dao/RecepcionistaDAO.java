@@ -44,7 +44,6 @@ public class RecepcionistaDAO {
             recepcionista.setEmail(partes[2]);
             recepcionista.setTelefone(partes[3]);
             recepcionista.setSenha(partes[4]);
-            recepcionista.setTipo(TipoUsuario.RECEPCIONISTA);
             recepcionista.setLogin(partes[0]); // Matrícula como login
             
             return recepcionista;

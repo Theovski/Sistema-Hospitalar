@@ -1,5 +1,7 @@
 package hospital.model;
 
+import hospital.model.enums.TipoUsuario;
+
 public class Recepcionista extends Usuario {
     private String matricula;
     

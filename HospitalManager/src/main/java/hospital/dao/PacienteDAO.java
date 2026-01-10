@@ -52,7 +52,6 @@ public class PacienteDAO implements ArquivoDAO<Paciente> {
             paciente.setTelefone(partes[3]);
             paciente.setConvenio(partes[4]);
             paciente.setAptoVisita(Boolean.parseBoolean(partes[5]));
-            paciente.setTipo(TipoUsuario.PACIENTE);
             paciente.setLogin(partes[0]); // CPF como login
             paciente.setSenha(partes[6]); // Senha (em texto por enquanto)
             

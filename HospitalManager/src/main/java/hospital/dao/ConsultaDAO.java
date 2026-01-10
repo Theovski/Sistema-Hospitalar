@@ -159,7 +159,7 @@ public class ConsultaDAO implements ArquivoDAO<Consulta> {
     public void marcarComoRealizada(String idConsulta, String observacoes) {
         Consulta consulta = buscarPorId(idConsulta);
         if (consulta != null) {
-            consulta.setStatus(StatusConsulta.REALIZADA);
+            consulta.setStatus(StatusConsulta.CONCLUIDA);
             consulta.setObservacoes(observacoes);
             consulta.setCompareceu(true);
             salvar(consulta);
@@ -169,7 +169,7 @@ public class ConsultaDAO implements ArquivoDAO<Consulta> {
     public void registrarFalta(String idConsulta) {
         Consulta consulta = buscarPorId(idConsulta);
         if (consulta != null) {
-            consulta.setStatus(StatusConsulta.FALTA);
+            consulta.setStatus(StatusConsulta.FALTOU);
             consulta.setCompareceu(false);
             salvar(consulta);
         }

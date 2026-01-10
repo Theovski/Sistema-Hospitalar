@@ -60,6 +60,9 @@ public class Receita {
     public LocalDate getDataPrescricao() { return dataPrescricao; }
     public void setDataPrescricao(LocalDate dataPrescricao) { this.dataPrescricao = dataPrescricao; }
     
+    // Alias para compatibilidade
+    public LocalDate getData() { return dataPrescricao; }
+    
     public List<Medicamento> getMedicamentos() { return medicamentos; }
     public void setMedicamentos(List<Medicamento> medicamentos) { this.medicamentos = medicamentos; }
     
@@ -82,7 +85,9 @@ public class Receita {
         return sb.toString();
     }
     
-    public String getInstrucoes() { return orientacoes; }
+    // Alias para DocumentoDAO
+    public String getMedicamentosTexto() { return getMedicamentosString(); }
+    public String getInstrucoes() { return orientacoes != null ? orientacoes : ""; }
     public void setInstrucoes(String instrucoes) { this.orientacoes = instrucoes; }
     
     @Override

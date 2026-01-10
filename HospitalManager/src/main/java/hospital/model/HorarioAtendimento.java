@@ -7,11 +7,7 @@ public class HorarioAtendimento {
     private DayOfWeek diaSemana;
     private LocalTime horaInicio;
     private LocalTime horaFim;
-<<<<<<< HEAD
     private int duracaoConsulta;
-=======
-    private int duracaoConsulta; 
->>>>>>> 586504875a4bde42a23314da35225f64cbeac28e
     
     public HorarioAtendimento(DayOfWeek diaSemana, LocalTime horaInicio, 
                               LocalTime horaFim, int duracaoConsulta) {

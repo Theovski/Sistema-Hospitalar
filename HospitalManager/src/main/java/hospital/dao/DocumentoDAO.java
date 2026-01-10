@@ -26,7 +26,7 @@ public class DocumentoDAO {
             atestado.getId(),
             atestado.getPacienteCpf(),
             atestado.getMedicoCrm(),
-            atestado.getData().toString(),
+            atestado.getDataEmissao().toString(),
             atestado.getDiagnostico(),
             atestado.getCid(),
             String.valueOf(atestado.getDiasRepouso())
@@ -61,7 +61,7 @@ public class DocumentoDAO {
             receita.getPacienteCpf(),
             receita.getMedicoCrm(),
             receita.getData().toString(),
-            receita.getMedicamentos(),
+            receita.getMedicamentosTexto(),
             receita.getInstrucoes()
         );
         FileManager.escreverArquivo(ARQUIVO_RECEITAS, linha, true);
