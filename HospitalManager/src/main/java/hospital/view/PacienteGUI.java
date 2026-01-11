@@ -347,7 +347,7 @@ public class PacienteGUI extends JFrame {
                 
                 if (pacienteBuscado == null) {
                     areaResultado.setText("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
-                        "❌ PACIENTE NÃO ENCONTRADO\n\n" +
+                        "PACIENTE NÃO ENCONTRADO\n\n" +
                         "CPF: " + cpfBusca + "\n\n" +
                         "O CPF informado não está cadastrado no sistema.\n" +
                         "Verifique se digitou corretamente.\n\n" +
@@ -358,14 +358,14 @@ public class PacienteGUI extends JFrame {
                 // Exibir informações
                 StringBuilder sb = new StringBuilder();
                 sb.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n");
-                sb.append("📋 INFORMAÇÕES DO PACIENTE\n\n");
+                sb.append("INFORMAÇÕES DO PACIENTE\n\n");
                 sb.append("Nome: ").append(pacienteBuscado.getNome()).append("\n");
                 sb.append("CPF: ").append(pacienteBuscado.getCpf()).append("\n\n");
                 
                 boolean aptoVisita = pacienteBuscado.isAptoVisita();
                 
                 if (aptoVisita) {
-                    sb.append("✅ STATUS DE VISITAÇÃO: LIBERADA\n\n");
+                    sb.append("STATUS DE VISITAÇÃO: LIBERADA\n\n");
                     sb.append("Este paciente está APTO a receber visitas.\n\n");
                     sb.append("Horários permitidos:\n");
                     sb.append("  • Segunda a Sexta: 14h às 18h\n");
@@ -374,7 +374,7 @@ public class PacienteGUI extends JFrame {
                     sb.append("  • Máximo de 2 visitantes por vez\n");
                     sb.append("  • Apresentar documento com foto na recepção\n");
                 } else {
-                    sb.append("🚫 STATUS DE VISITAÇÃO: PROIBIDA\n\n");
+                    sb.append("STATUS DE VISITAÇÃO: PROIBIDA\n\n");
                     sb.append("Este paciente NÃO está apto a receber visitas no momento.\n\n");
                     sb.append("A visitação foi restrita por decisão médica.\n");
                     sb.append("Entre em contato com a equipe médica para mais informações.\n");
@@ -482,7 +482,7 @@ public class PacienteGUI extends JFrame {
         try {
             // Receitas
             List<Receita> receitas = documentoService.listarReceitasPorPaciente(paciente.getCpf());
-            sb.append("📋 RECEITAS MÉDICAS (").append(receitas.size()).append("):\n");
+            sb.append("RECEITAS MÉDICAS (").append(receitas.size()).append("):\n");
             if (receitas.isEmpty()) {
                 sb.append("  Nenhuma receita disponível\n");
             } else {
@@ -497,7 +497,7 @@ public class PacienteGUI extends JFrame {
             
             // Atestados
             List<Atestado> atestados = documentoDAO.listarAtestadosPorPaciente(paciente.getCpf());
-            sb.append("📄 ATESTADOS MÉDICOS (").append(atestados.size()).append("):\n");
+            sb.append("ATESTADOS MÉDICOS (").append(atestados.size()).append("):\n");
             if (atestados.isEmpty()) {
                 sb.append("  Nenhum atestado disponível\n");
             } else {
@@ -514,7 +514,7 @@ public class PacienteGUI extends JFrame {
             
             // Exames
             List<Exame> exames = documentoDAO.listarExamesPorPaciente(paciente.getCpf());
-            sb.append("🔬 EXAMES (").append(exames.size()).append("):\n");
+            sb.append("EXAMES (").append(exames.size()).append("):\n");
             if (exames.isEmpty()) {
                 sb.append("  Nenhum exame disponível\n");
             } else {
@@ -533,7 +533,7 @@ public class PacienteGUI extends JFrame {
         }
         
         sb.append("\n").append("=".repeat(50)).append("\n");
-        sb.append("\n💡 Para solicitar novos exames ou atestados, consulte seu médico.");
+        sb.append("\nPara solicitar novos exames ou atestados, consulte seu médico.");
         
         areaDocumentos.setText(sb.toString());
         areaDocumentos.setCaretPosition(0);

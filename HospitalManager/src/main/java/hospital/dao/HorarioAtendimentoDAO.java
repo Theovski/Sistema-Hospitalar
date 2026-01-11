@@ -12,11 +12,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class HorarioAtendimentoDAO {
-    private static final String ARQUIVO = "horarios_atendimento.dat";
-    private FileManager fileManager;
+    private static final String ARQUIVO = "src/main/resources/data/horarios_atendimento.dat";
     
     public HorarioAtendimentoDAO() {
-        this.fileManager = new FileManager();
+        FileManager.criarDiretorioSeNaoExistir("src/main/resources/data");
     }
     
     public void salvar(String medicoCrm, HorarioAtendimento horario) {
@@ -24,7 +23,7 @@ public class HorarioAtendimentoDAO {
             List<String> linhas = new ArrayList<>();
             
             // Ler horários existentes
-            File arquivo = fileManager.getFile(ARQUIVO);
+            File arquivo = new File(ARQUIVO);
             if (arquivo.exists()) {
                 try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
                     String linha;
@@ -68,7 +67,7 @@ public class HorarioAtendimentoDAO {
         List<HorarioAtendimento> horarios = new ArrayList<>();
         
         try {
-            File arquivo = fileManager.getFile(ARQUIVO);
+            File arquivo = new File(ARQUIVO);
             if (!arquivo.exists()) {
                 return horarios;
             }
@@ -96,7 +95,7 @@ public class HorarioAtendimentoDAO {
     
     public void remover(String medicoCrm, DayOfWeek diaSemana) {
         try {
-            File arquivo = fileManager.getFile(ARQUIVO);
+            File arquivo = new File(ARQUIVO);
             if (!arquivo.exists()) {
                 return;
             }
