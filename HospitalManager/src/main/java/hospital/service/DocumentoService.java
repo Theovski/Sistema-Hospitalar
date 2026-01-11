@@ -39,6 +39,12 @@ public class DocumentoService {
     public List<Receita> listarReceitasPorPaciente(String cpf) {
         return documentoDAO.listarReceitasPorPaciente(cpf);
     }
-
     
+    public List<Atestado> listarAtestadosPorPaciente(String cpf) {
+        return documentoDAO.listarAtestadosPorPaciente(cpf);
+    }
+    
+    public List<Exame> listarExamesPorPaciente(String cpf) {
+        return documentoDAO.listarExamesPorPaciente(cpf);
+    }
 }
