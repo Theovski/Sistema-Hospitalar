@@ -10,9 +10,7 @@ import hospital.util.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * DAO único para todos os tipos de documentos médicos
- */
+// Classe para gerenciar atestados, receitas e exames
 public class DocumentoDAO {
     
     private static final String ARQUIVO_ATESTADOS = "src/main/resources/data/atestados.dat";

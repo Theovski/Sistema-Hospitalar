@@ -140,7 +140,7 @@ public class RecepcionistaGUI extends JFrame {
         // Botão Cadastrar Paciente
         JButton btnCadastrarPaciente = new JButton("<html><center>Cadastrar<br>Paciente</center></html>");
         btnCadastrarPaciente.setFont(new Font("Arial", Font.BOLD, 16));
-        btnCadastrarPaciente.setBackground(new Color(52, 152, 219));
+        btnCadastrarPaciente.setBackground(new Color(25, 118, 210));
         btnCadastrarPaciente.setForeground(Color.WHITE);
         btnCadastrarPaciente.setFocusPainted(false);
         btnCadastrarPaciente.setPreferredSize(new Dimension(200, 100));
@@ -154,7 +154,7 @@ public class RecepcionistaGUI extends JFrame {
         // Botão Cadastrar Médico
         JButton btnCadastrarMedico = new JButton("<html><center>Cadastrar<br>Médico</center></html>");
         btnCadastrarMedico.setFont(new Font("Arial", Font.BOLD, 16));
-        btnCadastrarMedico.setBackground(new Color(26, 188, 156));
+        btnCadastrarMedico.setBackground(new Color(0, 150, 136));
         btnCadastrarMedico.setForeground(Color.WHITE);
         btnCadastrarMedico.setFocusPainted(false);
         btnCadastrarMedico.setPreferredSize(new Dimension(200, 100));
@@ -168,7 +168,7 @@ public class RecepcionistaGUI extends JFrame {
         // Botão Listar Pacientes
         JButton btnListarPacientes = new JButton("<html><center>Listar<br>Pacientes</center></html>");
         btnListarPacientes.setFont(new Font("Arial", Font.BOLD, 16));
-        btnListarPacientes.setBackground(new Color(155, 89, 182));
+        btnListarPacientes.setBackground(new Color(123, 31, 162));
         btnListarPacientes.setForeground(Color.WHITE);
         btnListarPacientes.setFocusPainted(false);
         btnListarPacientes.setPreferredSize(new Dimension(200, 100));
@@ -182,7 +182,7 @@ public class RecepcionistaGUI extends JFrame {
         // Botão Gerenciar Médicos
         JButton btnGerenciarMedicos = new JButton("<html><center>Gerenciar<br>Médicos</center></html>");
         btnGerenciarMedicos.setFont(new Font("Arial", Font.BOLD, 16));
-        btnGerenciarMedicos.setBackground(new Color(230, 126, 34));
+        btnGerenciarMedicos.setBackground(new Color(230, 81, 0));
         btnGerenciarMedicos.setForeground(Color.WHITE);
         btnGerenciarMedicos.setFocusPainted(false);
         btnGerenciarMedicos.setPreferredSize(new Dimension(200, 100));

@@ -168,8 +168,9 @@ public class PacienteGUI extends JFrame {
         JPanel painelBotoes = new JPanel(new FlowLayout(FlowLayout.LEFT));
         
         JButton btnAgendar = new JButton("Agendar Consulta");
-        btnAgendar.setBackground(new Color(39, 174, 96));
+        btnAgendar.setBackground(new Color(46, 125, 50));
         btnAgendar.setForeground(Color.WHITE);
+        btnAgendar.setFont(new Font("Arial", Font.BOLD, 12));
         btnAgendar.setFocusPainted(false);
         btnAgendar.addActionListener(new ActionListener() {
             @Override
@@ -179,8 +180,9 @@ public class PacienteGUI extends JFrame {
         });
         
         JButton btnCancelar = new JButton("Cancelar Consulta");
-        btnCancelar.setBackground(new Color(230, 126, 34));
+        btnCancelar.setBackground(new Color(198, 40, 40));
         btnCancelar.setForeground(Color.WHITE);
+        btnCancelar.setFont(new Font("Arial", Font.BOLD, 12));
         btnCancelar.setFocusPainted(false);
         btnCancelar.addActionListener(new ActionListener() {
             @Override

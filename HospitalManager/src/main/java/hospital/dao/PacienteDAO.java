@@ -25,12 +25,7 @@ public class PacienteDAO implements ArquivoDAO<Paciente> {
     
     // ==================== MÉTODOS PRIVADOS (CONVERSÃO) ====================
     
-    /**
-     * Converte linha do arquivo para objeto Paciente
-     * Formato: CPF;NOME;EMAIL;TELEFONE;CONVENIO;APTO_VISITA;SENHA
-     */
-
-
+    // Converte linha do arquivo para objeto
     private Paciente converterLinhaParaPaciente(String linha) {
         try {
             String[] partes = linha.split(";");

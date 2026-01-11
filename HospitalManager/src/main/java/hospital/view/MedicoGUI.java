@@ -160,8 +160,9 @@ public class MedicoGUI extends JFrame {
         JPanel painelBotoes = new JPanel(new FlowLayout(FlowLayout.LEFT));
         
         JButton btnPresenca = new JButton("Marcar Presença");
-        btnPresenca.setBackground(new Color(39, 174, 96));
+        btnPresenca.setBackground(new Color(46, 125, 50));
         btnPresenca.setForeground(Color.WHITE);
+        btnPresenca.setFont(new Font("Arial", Font.BOLD, 12));
         btnPresenca.setFocusPainted(false);
         btnPresenca.addActionListener(new ActionListener() {
             @Override
@@ -171,8 +172,9 @@ public class MedicoGUI extends JFrame {
         });
         
         JButton btnFalta = new JButton("Marcar Falta");
-        btnFalta.setBackground(new Color(231, 76, 60));
+        btnFalta.setBackground(new Color(198, 40, 40));
         btnFalta.setForeground(Color.WHITE);
+        btnFalta.setFont(new Font("Arial", Font.BOLD, 12));
         btnFalta.setFocusPainted(false);
         btnFalta.addActionListener(new ActionListener() {
             @Override
@@ -182,8 +184,9 @@ public class MedicoGUI extends JFrame {
         });
         
         JButton btnConcluir = new JButton("Concluir Consulta");
-        btnConcluir.setBackground(new Color(52, 152, 219));
+        btnConcluir.setBackground(new Color(25, 118, 210));
         btnConcluir.setForeground(Color.WHITE);
+        btnConcluir.setFont(new Font("Arial", Font.BOLD, 12));
         btnConcluir.setFocusPainted(false);
         btnConcluir.addActionListener(new ActionListener() {
             @Override
