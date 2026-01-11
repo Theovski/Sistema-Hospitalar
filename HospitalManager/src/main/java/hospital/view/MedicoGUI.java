@@ -119,6 +119,8 @@ public class MedicoGUI extends JFrame {
         btnSair.setForeground(Color.WHITE);
         btnSair.setFont(new Font("Arial", Font.BOLD, 12));
         btnSair.setFocusPainted(false);
+        btnSair.setOpaque(true);
+        btnSair.setBorderPainted(false);
         btnSair.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -164,6 +166,8 @@ public class MedicoGUI extends JFrame {
         btnPresenca.setForeground(Color.WHITE);
         btnPresenca.setFont(new Font("Arial", Font.BOLD, 12));
         btnPresenca.setFocusPainted(false);
+        btnPresenca.setOpaque(true);
+        btnPresenca.setBorderPainted(false);
         btnPresenca.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -176,6 +180,8 @@ public class MedicoGUI extends JFrame {
         btnFalta.setForeground(Color.WHITE);
         btnFalta.setFont(new Font("Arial", Font.BOLD, 12));
         btnFalta.setFocusPainted(false);
+        btnFalta.setOpaque(true);
+        btnFalta.setBorderPainted(false);
         btnFalta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -188,6 +194,8 @@ public class MedicoGUI extends JFrame {
         btnConcluir.setForeground(Color.WHITE);
         btnConcluir.setFont(new Font("Arial", Font.BOLD, 12));
         btnConcluir.setFocusPainted(false);
+        btnConcluir.setOpaque(true);
+        btnConcluir.setBorderPainted(false);
         btnConcluir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -199,6 +207,8 @@ public class MedicoGUI extends JFrame {
         btnAtualizar.setBackground(new Color(149, 165, 166));
         btnAtualizar.setForeground(Color.WHITE);
         btnAtualizar.setFocusPainted(false);
+        btnAtualizar.setOpaque(true);
+        btnAtualizar.setBorderPainted(false);
         btnAtualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -235,6 +245,8 @@ public class MedicoGUI extends JFrame {
         btnBuscar.setBackground(new Color(52, 152, 219));
         btnBuscar.setForeground(Color.WHITE);
         btnBuscar.setFocusPainted(false);
+        btnBuscar.setOpaque(true);
+        btnBuscar.setBorderPainted(false);
         painelBusca.add(btnBuscar);
         
         areaProntuarios = new JTextArea();
@@ -284,6 +296,8 @@ public class MedicoGUI extends JFrame {
         btnAtestado.setBackground(new Color(52, 152, 219));
         btnAtestado.setForeground(Color.WHITE);
         btnAtestado.setFocusPainted(false);
+        btnAtestado.setOpaque(true);
+        btnAtestado.setBorderPainted(false);
         btnAtestado.setPreferredSize(new Dimension(300, 60));
         btnAtestado.addActionListener(new ActionListener() {
             @Override
@@ -298,6 +312,8 @@ public class MedicoGUI extends JFrame {
         btnReceita.setBackground(new Color(26, 188, 156));
         btnReceita.setForeground(Color.WHITE);
         btnReceita.setFocusPainted(false);
+        btnReceita.setOpaque(true);
+        btnReceita.setBorderPainted(false);
         btnReceita.setPreferredSize(new Dimension(300, 60));
         btnReceita.addActionListener(new ActionListener() {
             @Override
@@ -312,6 +328,8 @@ public class MedicoGUI extends JFrame {
         btnExame.setBackground(new Color(155, 89, 182));
         btnExame.setForeground(Color.WHITE);
         btnExame.setFocusPainted(false);
+        btnExame.setOpaque(true);
+        btnExame.setBorderPainted(false);
         btnExame.setPreferredSize(new Dimension(300, 60));
         btnExame.addActionListener(new ActionListener() {
             @Override
@@ -357,6 +375,8 @@ public class MedicoGUI extends JFrame {
         btnLiberar.setBackground(new Color(39, 174, 96));
         btnLiberar.setForeground(Color.WHITE);
         btnLiberar.setFocusPainted(false);
+        btnLiberar.setOpaque(true);
+        btnLiberar.setBorderPainted(false);
         btnLiberar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -368,6 +388,8 @@ public class MedicoGUI extends JFrame {
         btnProibir.setBackground(new Color(231, 76, 60));
         btnProibir.setForeground(Color.WHITE);
         btnProibir.setFocusPainted(false);
+        btnProibir.setOpaque(true);
+        btnProibir.setBorderPainted(false);
         btnProibir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -714,6 +736,9 @@ public class MedicoGUI extends JFrame {
         JButton btnSolicitar = new JButton("Solicitar");
         btnSolicitar.setBackground(new Color(39, 174, 96));
         btnSolicitar.setForeground(Color.WHITE);
+        btnSolicitar.setFocusPainted(false);
+        btnSolicitar.setOpaque(true);
+        btnSolicitar.setBorderPainted(false);
         btnSolicitar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -757,6 +782,9 @@ public class MedicoGUI extends JFrame {
         JButton btnCancelar = new JButton("Cancelar");
         btnCancelar.setBackground(new Color(231, 76, 60));
         btnCancelar.setForeground(Color.WHITE);
+        btnCancelar.setFocusPainted(false);
+        btnCancelar.setOpaque(true);
+        btnCancelar.setBorderPainted(false);
         btnCancelar.addActionListener(e -> dialogo.dispose());
         
         painelBotoes.add(btnSolicitar);

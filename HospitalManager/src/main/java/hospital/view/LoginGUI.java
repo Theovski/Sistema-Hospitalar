@@ -94,6 +94,8 @@ public class LoginGUI extends JFrame {
         btnEntrar.setBackground(new Color(46, 125, 50));
         btnEntrar.setForeground(Color.WHITE);
         btnEntrar.setFocusPainted(false);
+        btnEntrar.setOpaque(true);
+        btnEntrar.setBorderPainted(false);
         btnEntrar.setPreferredSize(new Dimension(100, 35));
         btnEntrar.addActionListener(new ActionListener() {
             @Override
@@ -107,6 +109,8 @@ public class LoginGUI extends JFrame {
         btnSair.setBackground(new Color(198, 40, 40));
         btnSair.setForeground(Color.WHITE);
         btnSair.setFocusPainted(false);
+        btnSair.setOpaque(true);
+        btnSair.setBorderPainted(false);
         btnSair.setPreferredSize(new Dimension(100, 35));
         btnSair.addActionListener(new ActionListener() {
             @Override

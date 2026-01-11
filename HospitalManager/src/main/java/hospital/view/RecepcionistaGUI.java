@@ -105,6 +105,8 @@ public class RecepcionistaGUI extends JFrame {
         btnSair.setForeground(Color.WHITE);
         btnSair.setFont(new Font("Arial", Font.BOLD, 12));
         btnSair.setFocusPainted(false);
+        btnSair.setOpaque(true);
+        btnSair.setBorderPainted(false);
         btnSair.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -143,6 +145,8 @@ public class RecepcionistaGUI extends JFrame {
         btnCadastrarPaciente.setBackground(new Color(25, 118, 210));
         btnCadastrarPaciente.setForeground(Color.WHITE);
         btnCadastrarPaciente.setFocusPainted(false);
+        btnCadastrarPaciente.setOpaque(true);
+        btnCadastrarPaciente.setBorderPainted(false);
         btnCadastrarPaciente.setPreferredSize(new Dimension(200, 100));
         btnCadastrarPaciente.addActionListener(new ActionListener() {
             @Override
@@ -157,6 +161,8 @@ public class RecepcionistaGUI extends JFrame {
         btnCadastrarMedico.setBackground(new Color(0, 150, 136));
         btnCadastrarMedico.setForeground(Color.WHITE);
         btnCadastrarMedico.setFocusPainted(false);
+        btnCadastrarMedico.setOpaque(true);
+        btnCadastrarMedico.setBorderPainted(false);
         btnCadastrarMedico.setPreferredSize(new Dimension(200, 100));
         btnCadastrarMedico.addActionListener(new ActionListener() {
             @Override
@@ -171,6 +177,8 @@ public class RecepcionistaGUI extends JFrame {
         btnListarPacientes.setBackground(new Color(123, 31, 162));
         btnListarPacientes.setForeground(Color.WHITE);
         btnListarPacientes.setFocusPainted(false);
+        btnListarPacientes.setOpaque(true);
+        btnListarPacientes.setBorderPainted(false);
         btnListarPacientes.setPreferredSize(new Dimension(200, 100));
         btnListarPacientes.addActionListener(new ActionListener() {
             @Override
@@ -185,6 +193,8 @@ public class RecepcionistaGUI extends JFrame {
         btnGerenciarMedicos.setBackground(new Color(230, 81, 0));
         btnGerenciarMedicos.setForeground(Color.WHITE);
         btnGerenciarMedicos.setFocusPainted(false);
+        btnGerenciarMedicos.setOpaque(true);
+        btnGerenciarMedicos.setBorderPainted(false);
         btnGerenciarMedicos.setPreferredSize(new Dimension(200, 100));
         btnGerenciarMedicos.addActionListener(new ActionListener() {
             @Override
@@ -220,6 +230,8 @@ public class RecepcionistaGUI extends JFrame {
         btnBuscar.setBackground(new Color(52, 152, 219));
         btnBuscar.setForeground(Color.WHITE);
         btnBuscar.setFocusPainted(false);
+        btnBuscar.setOpaque(true);
+        btnBuscar.setBorderPainted(false);
         btnBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -265,6 +277,8 @@ public class RecepcionistaGUI extends JFrame {
         btnRegistrarVisita.setBackground(new Color(39, 174, 96));
         btnRegistrarVisita.setForeground(Color.WHITE);
         btnRegistrarVisita.setFocusPainted(false);
+        btnRegistrarVisita.setOpaque(true);
+        btnRegistrarVisita.setBorderPainted(false);
         btnRegistrarVisita.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -316,6 +330,8 @@ public class RecepcionistaGUI extends JFrame {
         btnAtualizar.setBackground(new Color(52, 152, 219));
         btnAtualizar.setForeground(Color.WHITE);
         btnAtualizar.setFocusPainted(false);
+        btnAtualizar.setOpaque(true);
+        btnAtualizar.setBorderPainted(false);
         btnAtualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -327,6 +343,8 @@ public class RecepcionistaGUI extends JFrame {
         btnRelatorio.setBackground(new Color(230, 126, 34));
         btnRelatorio.setForeground(Color.WHITE);
         btnRelatorio.setFocusPainted(false);
+        btnRelatorio.setOpaque(true);
+        btnRelatorio.setBorderPainted(false);
         btnRelatorio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -399,6 +417,8 @@ public class RecepcionistaGUI extends JFrame {
         btnFiltrar.setBackground(new Color(46, 204, 113));
         btnFiltrar.setForeground(Color.WHITE);
         btnFiltrar.setFocusPainted(false);
+        btnFiltrar.setOpaque(true);
+        btnFiltrar.setBorderPainted(false);
         btnFiltrar.addActionListener(e -> {
             java.util.Date dataInicio = (java.util.Date) spinnerDataInicio.getValue();
             java.util.Date dataFim = (java.util.Date) spinnerDataFim.getValue();
@@ -421,6 +441,8 @@ public class RecepcionistaGUI extends JFrame {
         btnLimpar.setBackground(new Color(52, 152, 219));
         btnLimpar.setForeground(Color.WHITE);
         btnLimpar.setFocusPainted(false);
+        btnLimpar.setOpaque(true);
+        btnLimpar.setBorderPainted(false);
         btnLimpar.addActionListener(e -> {
             comboMedico.setSelectedIndex(0);
             spinnerDataInicio.setValue(new java.util.Date());
@@ -569,6 +591,8 @@ public class RecepcionistaGUI extends JFrame {
         JButton btnSalvar = new JButton("Salvar");
         btnSalvar.setBackground(new Color(39, 174, 96));
         btnSalvar.setForeground(Color.WHITE);
+        btnSalvar.setOpaque(true);
+        btnSalvar.setBorderPainted(false);
         btnSalvar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -601,6 +625,8 @@ public class RecepcionistaGUI extends JFrame {
         JButton btnCancelar = new JButton("Cancelar");
         btnCancelar.setBackground(new Color(231, 76, 60));
         btnCancelar.setForeground(Color.WHITE);
+        btnCancelar.setOpaque(true);
+        btnCancelar.setBorderPainted(false);
         btnCancelar.addActionListener(e -> dialogo.dispose());
         
         painelBotoes.add(btnSalvar);
@@ -665,6 +691,8 @@ public class RecepcionistaGUI extends JFrame {
         JButton btnSalvar = new JButton("Salvar");
         btnSalvar.setBackground(new Color(39, 174, 96));
         btnSalvar.setForeground(Color.WHITE);
+        btnSalvar.setOpaque(true);
+        btnSalvar.setBorderPainted(false);
         btnSalvar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -698,6 +726,8 @@ public class RecepcionistaGUI extends JFrame {
         JButton btnCancelar = new JButton("Cancelar");
         btnCancelar.setBackground(new Color(231, 76, 60));
         btnCancelar.setForeground(Color.WHITE);
+        btnCancelar.setOpaque(true);
+        btnCancelar.setBorderPainted(false);
         btnCancelar.addActionListener(e -> dialogo.dispose());
         
         painelBotoes.add(btnSalvar);

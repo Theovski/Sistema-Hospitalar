@@ -125,6 +125,8 @@ public class PacienteGUI extends JFrame {
         btnSair.setForeground(Color.WHITE);
         btnSair.setFont(new Font("Arial", Font.BOLD, 12));
         btnSair.setFocusPainted(false);
+        btnSair.setOpaque(true);
+        btnSair.setBorderPainted(false);
         btnSair.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -172,6 +174,8 @@ public class PacienteGUI extends JFrame {
         btnAgendar.setForeground(Color.WHITE);
         btnAgendar.setFont(new Font("Arial", Font.BOLD, 12));
         btnAgendar.setFocusPainted(false);
+        btnAgendar.setOpaque(true);
+        btnAgendar.setBorderPainted(false);
         btnAgendar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -184,6 +188,8 @@ public class PacienteGUI extends JFrame {
         btnCancelar.setForeground(Color.WHITE);
         btnCancelar.setFont(new Font("Arial", Font.BOLD, 12));
         btnCancelar.setFocusPainted(false);
+        btnCancelar.setOpaque(true);
+        btnCancelar.setBorderPainted(false);
         btnCancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -195,6 +201,8 @@ public class PacienteGUI extends JFrame {
         btnAtualizar.setBackground(new Color(52, 152, 219));
         btnAtualizar.setForeground(Color.WHITE);
         btnAtualizar.setFocusPainted(false);
+        btnAtualizar.setOpaque(true);
+        btnAtualizar.setBorderPainted(false);
         btnAtualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -232,6 +240,8 @@ public class PacienteGUI extends JFrame {
         btnAtualizar.setBackground(new Color(52, 152, 219));
         btnAtualizar.setForeground(Color.WHITE);
         btnAtualizar.setFocusPainted(false);
+        btnAtualizar.setOpaque(true);
+        btnAtualizar.setBorderPainted(false);
         btnAtualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -266,6 +276,8 @@ public class PacienteGUI extends JFrame {
         btnAtualizar.setBackground(new Color(52, 152, 219));
         btnAtualizar.setForeground(Color.WHITE);
         btnAtualizar.setFocusPainted(false);
+        btnAtualizar.setOpaque(true);
+        btnAtualizar.setBorderPainted(false);
         btnAtualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -303,12 +315,16 @@ public class PacienteGUI extends JFrame {
         btnBuscar.setBackground(new Color(52, 152, 219));
         btnBuscar.setForeground(Color.WHITE);
         btnBuscar.setFocusPainted(false);
+        btnBuscar.setOpaque(true);
+        btnBuscar.setBorderPainted(false);
         painelBusca.add(btnBuscar);
         
         JButton btnMeuStatus = new JButton("Meu Status");
         btnMeuStatus.setBackground(new Color(155, 89, 182));
         btnMeuStatus.setForeground(Color.WHITE);
         btnMeuStatus.setFocusPainted(false);
+        btnMeuStatus.setOpaque(true);
+        btnMeuStatus.setBorderPainted(false);
         painelBusca.add(btnMeuStatus);
         
         // Área de resultado
@@ -586,6 +602,9 @@ public class PacienteGUI extends JFrame {
         JButton btnConfirmar = new JButton("Confirmar");
         btnConfirmar.setBackground(new Color(39, 174, 96));
         btnConfirmar.setForeground(Color.WHITE);
+        btnConfirmar.setFocusPainted(false);
+        btnConfirmar.setOpaque(true);
+        btnConfirmar.setBorderPainted(false);
         btnConfirmar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -628,6 +647,9 @@ public class PacienteGUI extends JFrame {
         JButton btnCancelar = new JButton("Cancelar");
         btnCancelar.setBackground(new Color(231, 76, 60));
         btnCancelar.setForeground(Color.WHITE);
+        btnCancelar.setFocusPainted(false);
+        btnCancelar.setOpaque(true);
+        btnCancelar.setBorderPainted(false);
         btnCancelar.addActionListener(e -> dialogo.dispose());
         
         painelBotoes.add(btnConfirmar);
@@ -775,6 +797,8 @@ public class PacienteGUI extends JFrame {
         btnSalvar.setForeground(Color.WHITE);
         btnSalvar.setFont(new Font("Arial", Font.BOLD, 12));
         btnSalvar.setFocusPainted(false);
+        btnSalvar.setOpaque(true);
+        btnSalvar.setBorderPainted(false);
         btnSalvar.setPreferredSize(new Dimension(180, 35));
         btnSalvar.addActionListener(new ActionListener() {
             @Override
@@ -814,6 +838,8 @@ public class PacienteGUI extends JFrame {
         btnCancelar.setForeground(Color.WHITE);
         btnCancelar.setFont(new Font("Arial", Font.BOLD, 12));
         btnCancelar.setFocusPainted(false);
+        btnCancelar.setOpaque(true);
+        btnCancelar.setBorderPainted(false);
         btnCancelar.setPreferredSize(new Dimension(150, 35));
         btnCancelar.addActionListener(new ActionListener() {
             @Override
