@@ -40,7 +40,7 @@ public class LoginGUI extends JFrame {
         
         // Painel do cabeçalho
         JPanel painelTopo = new JPanel();
-        painelTopo.setBackground(new Color(41, 128, 185));
+        painelTopo.setBackground(new Color(21, 101, 192));
         painelTopo.setPreferredSize(new Dimension(400, 80));
         
         JLabel lblTitulo = new JLabel("Sistema de Gerenciamento Hospitalar");
@@ -91,7 +91,7 @@ public class LoginGUI extends JFrame {
         
         btnEntrar = new JButton("Entrar");
         btnEntrar.setFont(new Font("Arial", Font.BOLD, 12));
-        btnEntrar.setBackground(new Color(39, 174, 96));
+        btnEntrar.setBackground(new Color(46, 125, 50));
         btnEntrar.setForeground(Color.WHITE);
         btnEntrar.setFocusPainted(false);
         btnEntrar.setPreferredSize(new Dimension(100, 35));
@@ -104,7 +104,7 @@ public class LoginGUI extends JFrame {
         
         btnSair = new JButton("Sair");
         btnSair.setFont(new Font("Arial", Font.BOLD, 12));
-        btnSair.setBackground(new Color(231, 76, 60));
+        btnSair.setBackground(new Color(198, 40, 40));
         btnSair.setForeground(Color.WHITE);
         btnSair.setFocusPainted(false);
         btnSair.setPreferredSize(new Dimension(100, 35));
