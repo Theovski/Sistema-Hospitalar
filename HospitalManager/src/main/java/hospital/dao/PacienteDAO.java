@@ -49,6 +49,7 @@ public class PacienteDAO implements ArquivoDAO<Paciente> {
             paciente.setAptoVisita(Boolean.parseBoolean(partes[5]));
             paciente.setLogin(partes[0]); // CPF como login
             paciente.setSenha(partes[6]); // Senha (em texto por enquanto)
+            paciente.setTipoUsuario(hospital.model.enums.TipoUsuario.PACIENTE);
             
             return paciente;
             

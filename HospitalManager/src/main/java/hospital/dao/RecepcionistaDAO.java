@@ -41,6 +41,7 @@ public class RecepcionistaDAO {
             recepcionista.setTelefone(partes[3]);
             recepcionista.setSenha(partes[4]);
             recepcionista.setLogin(partes[0]); // Matrícula como login
+            recepcionista.setTipoUsuario(hospital.model.enums.TipoUsuario.RECEPCIONISTA);
             
             return recepcionista;
             
