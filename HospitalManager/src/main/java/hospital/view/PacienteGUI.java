@@ -206,6 +206,8 @@ public class PacienteGUI extends JFrame {
         btnAtualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                consultaDAO = new hospital.dao.ConsultaDAO();
+                medicoDAO = new hospital.dao.MedicoDAO();
                 carregarConsultas();
                 JOptionPane.showMessageDialog(painel, "Consultas atualizadas!");
             }
@@ -245,7 +247,10 @@ public class PacienteGUI extends JFrame {
         btnAtualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                consultaDAO = new hospital.dao.ConsultaDAO();
+                medicoDAO = new hospital.dao.MedicoDAO();
                 carregarHistorico();
+                JOptionPane.showMessageDialog(painel, "Histórico atualizado!");
             }
         });
         
@@ -281,7 +286,9 @@ public class PacienteGUI extends JFrame {
         btnAtualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                documentoDAO = new hospital.dao.DocumentoDAO();
                 carregarDocumentos();
+                JOptionPane.showMessageDialog(painel, "Documentos atualizados!");
             }
         });
         
@@ -478,8 +485,9 @@ public class PacienteGUI extends JFrame {
                 sb.append("Data/Hora: ").append(DataHoraUtil.formatar(c.getDataHora())).append("\n");
                 sb.append("Médico: ").append(medico != null ? medico.getNome() : "N/A").append("\n");
                 sb.append("Status: ").append(c.getStatus()).append("\n");
-                if (c.getObservacoes() != null && !c.getObservacoes().isEmpty()) {
-                    sb.append("Observações: ").append(c.getObservacoes()).append("\n");
+                String obs = c.getObservacoes();
+                if (obs != null && !obs.isEmpty() && !obs.equalsIgnoreCase("null")) {
+                    sb.append("Observações: ").append(obs).append("\n");
                 }
                 sb.append("\n").append("=".repeat(50)).append("\n\n");
             }
@@ -628,6 +636,9 @@ public class PacienteGUI extends JFrame {
                     );
                     
                     agendamentoService.agendar(consulta);
+                    
+                    // Recarregar DAOs para atualização automática
+                    consultaDAO = new hospital.dao.ConsultaDAO();
                     
                     JOptionPane.showMessageDialog(dialogo, 
                         "Consulta agendada com sucesso!\nID: " + consulta.getId(),

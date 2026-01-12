@@ -335,7 +335,11 @@ public class RecepcionistaGUI extends JFrame {
         btnAtualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                consultaDAO = new hospital.dao.ConsultaDAO();
+                pacienteDAO = new hospital.dao.PacienteDAO();
+                medicoDAO = new hospital.dao.MedicoDAO();
                 atualizarMonitoramento(areaMonitoramento);
+                JOptionPane.showMessageDialog(painel, "Dados atualizados!");
             }
         });
         
@@ -610,6 +614,9 @@ public class RecepcionistaGUI extends JFrame {
                     
                     cadastroService.cadastrarPaciente(p);
                     
+                    // Recarregar DAOs para atualização automática
+                    pacienteDAO = new hospital.dao.PacienteDAO();
+                    
                     JOptionPane.showMessageDialog(dialogo, 
                         "Paciente cadastrado com sucesso!",
                         "Sucesso", JOptionPane.INFORMATION_MESSAGE);
@@ -710,6 +717,9 @@ public class RecepcionistaGUI extends JFrame {
                     );
                     
                     cadastroService.cadastrarMedico(m);
+                    
+                    // Recarregar DAOs para atualização automática
+                    medicoDAO = new hospital.dao.MedicoDAO();
                     
                     JOptionPane.showMessageDialog(dialogo, 
                         "Médico cadastrado com sucesso!",

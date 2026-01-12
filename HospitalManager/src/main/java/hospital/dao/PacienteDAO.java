@@ -29,7 +29,8 @@ public class PacienteDAO implements ArquivoDAO<Paciente> {
     private Paciente converterLinhaParaPaciente(String linha) {
         try {
             String[] partes = linha.split(";");
-            if (partes.length != 7) {
+            // Aceitar 7 (formato antigo) ou 8 campos (formato novo com endereço)
+            if (partes.length != 7 && partes.length != 8) {
                 Logger.aviso("PacienteDAO", "Linha inválida (campos incorretos): " + linha);
                 return null;
             }
@@ -45,10 +46,21 @@ public class PacienteDAO implements ArquivoDAO<Paciente> {
             paciente.setNome(partes[1]);
             paciente.setEmail(partes[2]);
             paciente.setTelefone(partes[3]);
-            paciente.setConvenio(partes[4]);
-            paciente.setAptoVisita(Boolean.parseBoolean(partes[5]));
+            
+            // Se tem 8 campos (formato novo)
+            if (partes.length == 8) {
+                paciente.setEndereco(partes[4]);
+                paciente.setConvenio(partes[5]);
+                paciente.setAptoVisita(Boolean.parseBoolean(partes[6]));
+                paciente.setSenha(partes[7]);
+            } else {
+                // Formato antigo (7 campos)
+                paciente.setConvenio(partes[4]);
+                paciente.setAptoVisita(Boolean.parseBoolean(partes[5]));
+                paciente.setSenha(partes[6]);
+            }
+            
             paciente.setLogin(partes[0]); // CPF como login
-            paciente.setSenha(partes[6]); // Senha (em texto por enquanto)
             paciente.setTipoUsuario(hospital.model.enums.TipoUsuario.PACIENTE);
             
             return paciente;
@@ -68,6 +80,7 @@ public class PacienteDAO implements ArquivoDAO<Paciente> {
             paciente.getNome(),
             paciente.getEmail(),
             paciente.getTelefone(),
+            paciente.getEndereco() != null ? paciente.getEndereco() : "",
             paciente.getConvenio(),
             String.valueOf(paciente.isAptoVisita()),
             paciente.getSenha()

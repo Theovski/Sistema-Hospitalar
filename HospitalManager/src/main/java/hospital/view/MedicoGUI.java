@@ -212,7 +212,10 @@ public class MedicoGUI extends JFrame {
         btnAtualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                consultaDAO = new hospital.dao.ConsultaDAO();
+                pacienteDAO = new hospital.dao.PacienteDAO();
                 carregarAgenda();
+                JOptionPane.showMessageDialog(painel, "Agenda atualizada!");
             }
         });
         btnAtualizar.setForeground(Color.WHITE);
@@ -648,6 +651,7 @@ public class MedicoGUI extends JFrame {
             receita.setId("REC" + System.currentTimeMillis());
             receita.setPacienteCpf(cpf.trim());
             receita.setMedicoCrm(medico.getCrm());
+            receita.setDataPrescricao(java.time.LocalDate.now());
             receita.setOrientacoes(instrucoes != null ? instrucoes : "");
             
             // Adicionar medicamentos (simplificado)
@@ -761,7 +765,10 @@ public class MedicoGUI extends JFrame {
                     exame.setMedicoCrmSolicitante(medico.getCrm());
                     exame.setTipoExame((String) comboTipo.getSelectedItem());
                     exame.setDataSolicitacao(java.time.LocalDate.now());
-                    exame.setResultado(txtObs.getText().trim());
+                    String obs = txtObs.getText().trim();
+                    if (!obs.isEmpty()) {
+                        exame.setResultado(obs);
+                    }
                     
                     documentoService.solicitarExame(exame);
                     
