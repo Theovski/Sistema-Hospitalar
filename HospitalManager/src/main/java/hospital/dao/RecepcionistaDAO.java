@@ -9,11 +9,7 @@ import hospital.util.ValidadorEmail;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Implementa persistência em arquivo conforme requisito do trabalho.
- * Formato do arquivo: MATRICULA;NOME;EMAIL;TELEFONE;SENHA
- */
-
+// Classe para salvar e carregar recepcionistas do arquivo
 public class RecepcionistaDAO {
     
     private static final String ARQUIVO = "src/main/resources/data/recepcionistas.dat";
@@ -45,6 +41,7 @@ public class RecepcionistaDAO {
             recepcionista.setTelefone(partes[3]);
             recepcionista.setSenha(partes[4]);
             recepcionista.setLogin(partes[0]); // Matrícula como login
+            recepcionista.setTipoUsuario(hospital.model.enums.TipoUsuario.RECEPCIONISTA);
             
             return recepcionista;
             
@@ -54,10 +51,7 @@ public class RecepcionistaDAO {
         }
     }
     
-    /**
-     * Converte objeto Recepcionista para linha do arquivo
-     */
-
+    // Converte objeto para linha do arquivo
     private String converterRecepcionistaParaLinha(Recepcionista recepcionista) {
         return String.join(";",
             recepcionista.getMatricula(),
@@ -68,10 +62,7 @@ public class RecepcionistaDAO {
         );
     }
     
-    /**
-     * Carrega todos os recepcionistas do arquivo
-     */
-
+    // Carrega recepcionistas do arquivo
     private List<Recepcionista> carregarDoArquivo() {
         List<Recepcionista> lista = new ArrayList<>();
         

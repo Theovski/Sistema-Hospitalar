@@ -1,3 +1,6 @@
+
 CRM12345;Dr. Pedro Almeida;pedro@hospital.com;11966666666;CARDIOLOGIA;true;medico123
 CRM67890;Dra. Ana Costa;ana@hospital.com;11955555555;PEDIATRIA;true;medico123
 CRM11111;Dr. Roberto Lima;roberto@hospital.com;11944444444;ORTOPEDIA;true;medico123
+CRM54321;Dra. Paula Souza;paula@hospital.com;(11) 3344-5566;CLINICO_GERAL;true;senha321
+CRM99999;Dr. Roberto Alves;roberto@hospital.com;(11) 3555-4444;ORTOPEDIA;true;senha456

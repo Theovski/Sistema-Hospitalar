@@ -3,14 +3,18 @@ package hospital.service;
 import hospital.dao.ConsultaDAO;
 import hospital.dao.MedicoDAO;
 import hospital.dao.PacienteDAO;
+import hospital.dao.HorarioAtendimentoDAO;
 import hospital.model.Consulta;
 import hospital.model.Medico;
 import hospital.model.Paciente;
+import hospital.model.HorarioAtendimento;
 import hospital.model.exceptions.AgendamentoInvalidoException;
 import hospital.util.DataHoraUtil;
 import hospital.util.Logger;
 
 import java.time.LocalDateTime;
+import java.time.DayOfWeek;
+import java.time.LocalTime;
 import java.util.List;
 
 public class AgendamentoService {
@@ -18,11 +22,13 @@ public class AgendamentoService {
     private ConsultaDAO consultaDAO;
     private PacienteDAO pacienteDAO;
     private MedicoDAO medicoDAO;
+    private HorarioAtendimentoDAO horarioDAO;
 
     public AgendamentoService() {
         this.consultaDAO = new ConsultaDAO();
         this.pacienteDAO = new PacienteDAO();
         this.medicoDAO = new MedicoDAO();
+        this.horarioDAO = new HorarioAtendimentoDAO();
         Logger.info("AgendamentoService", "Serviço de agendamento inicializado");
     }
 
@@ -44,6 +50,9 @@ public class AgendamentoService {
         if (consulta.getDataHora() == null || consulta.getDataHora().isBefore(agora)) {
             throw new AgendamentoInvalidoException("Data/hora inválida");
         }
+        
+        // Validar se o horário está dentro dos slots cadastrados pelo médico
+        validarHorarioDisponivel(medico.getCrm(), consulta.getDataHora());
 
         
         List<Consulta> futuras = consultaDAO.listarFuturasPorMedico(medico.getCrm());
@@ -83,5 +92,34 @@ public class AgendamentoService {
 
     public List<Consulta> listarPorPaciente(String cpf) {
         return consultaDAO.listarPorPaciente(cpf);
+    }
+    
+    private void validarHorarioDisponivel(String medicoCrm, LocalDateTime dataHora) {
+        List<HorarioAtendimento> horarios = horarioDAO.listarPorMedico(medicoCrm);
+        
+        if (horarios.isEmpty()) {
+            // Se não há horários cadastrados, permite qualquer horário
+            Logger.aviso("AgendamentoService", "Médico sem horários cadastrados - permitindo agendamento");
+            return;
+        }
+        
+        DayOfWeek diaSemana = dataHora.getDayOfWeek();
+        LocalTime horario = dataHora.toLocalTime();
+        
+        // Verificar se existe horário para esse dia
+        for (HorarioAtendimento h : horarios) {
+            if (h.getDiaSemana().equals(diaSemana)) {
+                // Verificar se está dentro do intervalo
+                if (!horario.isBefore(h.getHoraInicio()) && !horario.isAfter(h.getHoraFim())) {
+                    // Está dentro do horário de atendimento
+                    return;
+                }
+            }
+        }
+        
+        throw new AgendamentoInvalidoException(
+            "Horário fora dos slots de atendimento do médico. " +
+            "Verifique os horários disponíveis na aba 'Meus Horários'."
+        );
     }
 }
